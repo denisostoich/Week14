@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Denis Ostoich">
+    <title>Register Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Register Form</h1>
+        <form id="form">
+            <div class="formulario-grupo" id="grupo-email">
+                <label for="email-input">Email</label>
+                <div class="formulario-grupo-input">
+                    <input type="email" name="email-input" id="email-input" placeholder="Enter an Email" required>
+                </div>
+                <p class="formulario-input">The email does not have a correct format.</p>
+            </div>
+            <div class="formulario-grupo" id="grupo-nombre">
+                <label for="full-name-input">Full Name</label>
+                <div class="formulario-grupo-input">
+                    <input type="text" name="full-name-input" id="full-name-input" placeholder="Enter your Name" required>
+                </div>
+                <p class="formulario-input">The full name must have more than 6 letters and at least one space in between.</p>
+            </div>
+            <div class="formulario-grupo" id="grupo-password">
+                <label for="password-input">Password</label>
+                <div class="formulario-grupo-input">
+                    <input type="password" name="password-input" id="password-input" placeholder="Select your Password" required>            
+                </div>
+                <p class="formulario-input">The password must contain at least 8 characters, made up of letters and numbers.</p>
+            </div>
+            <div class="formulario-grupo" id="grupo-confirm-password">
+                <label for="confirm-password-input">Confirm Password</label>
+                <div class="formulario-grupo-input">
+                    <input type="password" name="confirm-password-input" id="confirm-password-input" placeholder="Repeat Password" required>
+                </div>
+                <p class="formulario-input">Both passwords must be the same.</p>
+            </div>
+            <a id="link" href="login.html">Do you have an account?</a>
+            <input class="button" type="submit" value="Register">
+            <input class="button" type="reset" value="Reset">
+            <div class="formulario-grupo" id="data">
+                <ul class="data">
+                </ul>
+            </div>
+        </form>
+        <div class="validation">
+            <ul class="list">
+            </ul>
+        </div>
+    </div>    
+    <script src="register.js"></script>
+    <script src="register-validation.js"></script>
+</body>
+</html>
