@@ -84,17 +84,17 @@ form a:hover {
     background: lightgreen;
 }
 
-.formulario-grupo-correcto {
+.formularioGrupoCorrecto {
     opacity: 1;
     border: 3px solid rgb(0, 255, 0);
 }
 
-.formulario-grupo-incorrecto {
+.formularioGrupoIncorrecto {
     opacity: 1;
     border: 3px solid rgb(255, 0, 0);
 }
 
-.formulario-grupo {
+.formularioGrupo {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -102,16 +102,16 @@ form a:hover {
     align-items:initial;
 }
 
-.formulario-grupo-input {
+.formularioGrupoInput {
 	position: relative;
 }
 
-.formulario-input {
+.formularioInput {
     font-size: 12px;
     margin-bottom: 0;
     display: none;
 }
 
-.formulario-input-error {
+.formularioInputError {
     display: block;
 }

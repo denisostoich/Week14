@@ -1,12 +1,15 @@
-import * as Page from './page';
+const Page = require('./page');
 
-class LoginPage extends Page {
+class loginPage extends Page {
    
     get email () { return $('#emailInput') }
     get password () { return $('#passwordInput') }
+    get errorEmail () { return $$('.formularioInput')[0] }
+    get errorPassword () { return $$('.formularioInput')[1] }
     get loginBtn () { return $('button[type="submit"]') }
     get resetBtn () { return $('button[type="reset"]') }
-    
+    get valid() { return $('.data')}
+    get registerLink () {return $('#link') }
 
     open () {
         return super.open('login');
@@ -20,4 +23,4 @@ class LoginPage extends Page {
     }
 }
 
-export default new LoginPage();
+module.exports = new loginPage();

@@ -1,6 +1,6 @@
 var expresiones = {
     email: /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/,
-    fullName: /^([a-zA-ZÀ-ÿ]+\ [a-zA-ZÀ-ÿ]){6,40}$/,         // Debe tener más de 6 letras y al menos un espacio entre medio.    
+    fullName: /(^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{6,})+$/,         // Debe tener más de 6 letras y al menos un espacio entre medio.    
 	password: /^[a-zA-Z0-9]{8,16}$/,         // Al menos 8 caracteres, formados por letras y números.
 	confirmPassword: /^[a-zA-Z0-9]{8,16}$/,  // Al menos 8 caracteres, formados por letras y números.
 }
@@ -16,57 +16,57 @@ var inputs = document.querySelectorAll('#form input');
 
 var validForm = function (e) {
     switch (e.target.name){
-        case "email-input":
+        case "emailInput":
             if (expresiones.email.test(e.target.value)) {
-                document.getElementById('email-input').classList.remove('formulario-grupo-incorrecto');
-                document.getElementById('email-input').classList.add('formulario-grupo-correcto');
-                document.querySelector('#grupo-email .formulario-input').classList.remove('formulario-input-error');
+                document.getElementById('emailInput').classList.remove('formularioGrupoIncorrecto');
+                document.getElementById('emailInput').classList.add('formularioGrupoCorrecto');
+                document.querySelector('#grupoEmail .formularioInput').classList.remove('formularioInputError');
                 campos['email'] = true;
             } else {
-                document.getElementById('email-input').classList.add('formulario-grupo-incorrecto');
-                document.getElementById('email-input').classList.remove('formulario-grupo-correcto');
-                document.querySelector('#grupo-email .formulario-input').classList.add('formulario-input-error'); 
+                document.getElementById('emailInput').classList.add('formularioGrupoIncorrecto');
+                document.getElementById('emailInput').classList.remove('formularioGrupoCorrecto');
+                document.querySelector('#grupoEmail .formularioInput').classList.add('formularioInputError'); 
                 campos['email'] = false;
             }
         break;
-        case "full-name-input":
+        case "fullNameInput":
             if (expresiones.fullName.test(e.target.value)) {
-                document.getElementById('full-name-input').classList.remove('formulario-grupo-incorrecto');
-                document.getElementById('full-name-input').classList.add('formulario-grupo-correcto');
-                document.querySelector('#grupo-nombre .formulario-input').classList.remove('formulario-input-error');
+                document.getElementById('fullNameInput').classList.remove('formularioGrupoIncorrecto');
+                document.getElementById('fullNameInput').classList.add('formularioGrupoCorrecto');
+                document.querySelector('#grupoNombre .formularioInput').classList.remove('formularioInputError');
                 campos['fullName'] = true;
             } else {
-                document.getElementById('full-name-input').classList.add('formulario-grupo-incorrecto');
-                document.getElementById('full-name-input').classList.remove('formulario-grupo-correcto');
-                document.querySelector('#grupo-nombre .formulario-input').classList.add('formulario-input-error');
+                document.getElementById('fullNameInput').classList.add('formularioGrupoIncorrecto');
+                document.getElementById('fullNameInput').classList.remove('formularioGrupoCorrecto');
+                document.querySelector('#grupoNombre .formularioInput').classList.add('formularioInputError');
                 campos['fullName'] = false;
             }
         break;  
-        case "password-input":
+        case "passwordInput":
             if (expresiones.password.test(e.target.value)) {
-                document.getElementById('password-input').classList.remove('formulario-grupo-incorrecto');
-                document.getElementById('password-input').classList.add('formulario-grupo-correcto');
-                document.querySelector('#grupo-password .formulario-input').classList.remove('formulario-input-error');
+                document.getElementById('passwordInput').classList.remove('formularioGrupoIncorrecto');
+                document.getElementById('passwordInput').classList.add('formularioGrupoCorrecto');
+                document.querySelector('#grupoPassword .formularioInput').classList.remove('formularioInputError');
                 campos['password'] = true;
             } else {
-                document.getElementById('password-input').classList.add('formulario-grupo-incorrecto');
-                document.getElementById('password-input').classList.remove('formulario-grupo-correcto');
-                document.querySelector('#grupo-password .formulario-input').classList.add('formulario-input-error');
+                document.getElementById('passwordInput').classList.add('formularioGrupoIncorrecto');
+                document.getElementById('passwordInput').classList.remove('formularioGrupoCorrecto');
+                document.querySelector('#grupoPassword .formularioInput').classList.add('formularioInputError');
                 campos['password'] = false;
             }
         break;
-        case "confirm-password-input":
-            var inputPassword1 = document.getElementById('password-input');
-            var inputPassword2 = document.getElementById('confirm-password-input');
+        case "confirmPasswordInput":
+            var inputPassword1 = document.getElementById('passwordInput');
+            var inputPassword2 = document.getElementById('confirmPasswordInput');
             if (inputPassword1.value !== inputPassword2.value) {
-                document.getElementById('confirm-password-input').classList.add('formulario-grupo-incorrecto');
-                document.getElementById('confirm-password-input').classList.remove('formulario-grupo-correcto');
-                document.querySelector('#grupo-confirm-password .formulario-input').classList.add('formulario-input-error');
+                document.getElementById('confirmPasswordInput').classList.add('formularioGrupoIncorrecto');
+                document.getElementById('confirmPasswordInput').classList.remove('formularioGrupoCorrecto');
+                document.querySelector('#grupoConfirmPassword .formularioInput').classList.add('formularioInputError');
                 campos['password'] = false;
             } else {
-                document.getElementById('confirm-password-input').classList.remove('formulario-grupo-incorrecto');
-                document.getElementById('confirm-password-input').classList.add('formulario-grupo-correcto');
-                document.querySelector('#grupo-confirm-password .formulario-input').classList.remove('formulario-input-error');
+                document.getElementById('confirmPasswordInput').classList.remove('formularioGrupoIncorrecto');
+                document.getElementById('confirmPasswordInput').classList.add('formularioGrupoCorrecto');
+                document.querySelector('#grupoConfirmPassword .formularioInput').classList.remove('formularioInputError');
                 campos['password'] = true;
             }
         break;
@@ -84,8 +84,8 @@ formulario.addEventListener('submit', function(e){
     if (campos.email && campos.fullName && campos.password){
         formulario.reset();
         data.style.display = 'flex';
-        data.innerHTML ="Email: " + document.querySelector('#email-input').value +
-         "\nFull Name: " + document.querySelector('#full-name-input').value + "\nPassword: "+document.querySelector('#password-input').value;
+        data.innerHTML ="Email: " + document.querySelector('#emailInput').value +
+         " Full Name: " + document.querySelector('#fullNameInput').value + " Password: "+document.querySelector('#passwordInput').value;
         sendRegisterForm();
     }else {
         data.style.display = 'flex';
@@ -96,15 +96,15 @@ formulario.addEventListener('submit', function(e){
 
 //Post Request
 function sendRegisterForm(){
-    fetch('http://localhost:4000/register',{
+    fetch('http://localhost:4000/register.html',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-            },
+        },
         body: JSON.stringify({
-            email: document.getElementById('email-input').value,
-            fullName: document.getElementById('full-name-input').value,
-            password: document.getElementById('password-input').value,
+            email: document.getElementById('emailInput').value,
+            fullName: document.getElementById('fullNameInput').value,
+            password: document.getElementById('passwordInput').value,
         })
     })
     .then (response => response.json())

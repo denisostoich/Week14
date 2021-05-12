@@ -23,6 +23,8 @@ fieldsQuantity()
 var validAnchor = function () {
     validation.style.display = 'flex';
     var anchor = document.querySelector('#form a').href;
+    console.log (anchor);
+    console.log (validHref);
     var validHref = 'register.html';
     if (anchor == validHref) {
         var anchorNode = document.createElement("LI");
