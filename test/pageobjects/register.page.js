@@ -10,8 +10,8 @@ class registerPage extends Page {
     get errorFullName () { return $$('.formularioInput')[1] }
     get errorPassword () { return $$('.formularioInput')[2] }
     get errorConfirmPassword () { return $$('.formularioInput')[3] }
-    get registerBtn () { return $('button[type="submit"]') }
-    get resetBtn () { return $('button[type="reset"]') }
+    get registerBtn () { return $('input[type="submit"]') }
+    get resetBtn () { return $('input[type="reset"]') }
     get valid() { return $('.data')}
     get loginLink () {return $('#link') }
     
@@ -19,7 +19,7 @@ class registerPage extends Page {
         return super.open('register');
     }
 
-    register () {
+    submit () {
         this.registerBtn.click();
     }
     reset () {

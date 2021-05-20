@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620787951947" clover="3.2.0">
-  <project timestamp="1620787951947" name="All files">
+<coverage generated="1621465730369" clover="3.2.0">
+  <project timestamp="1621465730370" name="All files">
     <metrics statements="32" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="27" coveredmethods="0" elements="59" coveredelements="5" complexity="0" loc="32" ncloc="32" packages="1" files="3" classes="3"/>
     <file name="login.page.js" path="C:\Users\Denis\Desktop\Radium Rocket\Semana 14\Problemática Semanal 14\Week14\test\pageobjects\login.page.js">
       <metrics statements="13" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="0"/>

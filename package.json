@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --color",
-    "test-coverage": "jest --coverage --color"
+    "test": "npx wdio run ./wdio.conf.js"
   },
   "jest": {
     "transform": {

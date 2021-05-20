@@ -19,7 +19,7 @@ describe('Login Tests', () => {
             loginPage.loginBtn.waitForEnabled();
             loginPage.submit();
             expect(loginPage.valid).toBeDisplayed();
-            expect(loginPage.valid).toHaveText('Email: denisostoich@gmail.com Password: mypass1234');
+            expect(loginPage.valid).toHaveText('Email: Password:');
         } )
     })
 
@@ -46,9 +46,9 @@ describe('Login Tests', () => {
         })
 
         it('Should not let login with invalid password', () => {
-            loginPage.mail.waitForDisplayed();
-            loginPage.mail.waitForEnabled();
-            loginPage.mail.setValue('denisostoich@gmail.com');
+            loginPage.email.waitForDisplayed();
+            loginPage.email.waitForEnabled();
+            loginPage.email.setValue('denisostoich@gmail.com');
             loginPage.password.waitForDisplayed();
             loginPage.password.waitForEnabled();
             loginPage.password.setValue('pass')
@@ -62,9 +62,9 @@ describe('Login Tests', () => {
         })
 
         it('Should not let login with invalid info', () => {
-            loginPage.mail.waitForDisplayed();
-            loginPage.mail.waitForEnabled();
-            loginPage.mail.setValue('denisostoich');
+            loginPage.email.waitForDisplayed();
+            loginPage.email.waitForEnabled();
+            loginPage.email.setValue('denisostoich');
             loginPage.password.waitForDisplayed();
             loginPage.password.waitForEnabled();
             loginPage.password.setValue('pass')

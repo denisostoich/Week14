@@ -25,7 +25,7 @@ describe ('Register Tests', () => {
             registerPage.registerBtn.waitForEnabled();
             registerPage.submit();
             expect(registerPage.valid).toBeDisplayed();
-            expect(registerPage.valid).toHaveText('Email: denisostoich@gmail.com Full Name: Denis Ostoich Password: mypass1234');
+            expect(registerPage.valid).toHaveText('Email: Full Name: Password:');
         });
     })
 

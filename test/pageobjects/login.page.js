@@ -6,8 +6,8 @@ class loginPage extends Page {
     get password () { return $('#passwordInput') }
     get errorEmail () { return $$('.formularioInput')[0] }
     get errorPassword () { return $$('.formularioInput')[1] }
-    get loginBtn () { return $('button[type="submit"]') }
-    get resetBtn () { return $('button[type="reset"]') }
+    get loginBtn () { return $('input[type="submit"]') }
+    get resetBtn () { return $('input[type="reset"]') }
     get valid() { return $('.data')}
     get registerLink () {return $('#link') }
 
